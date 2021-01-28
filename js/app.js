@@ -26,8 +26,9 @@ let seattle = {
   // a method to calculate and populate our number of cookies sold per hour array
   calcCookiesSoldEachHour: function () {
     for (var i = 0; i < hours.length; i++) {
-      let cookiesSold = Math.ceil(this.randomCustomerEachHour() / this.avgerageCookieSoldPerCustomer);
+      let cookiesSold = Math.ceil(this.randomCustomerEachHour() * this.avgerageCookieSoldPerCustomer);
       this.cookiesSoldPerHourArray.push(cookiesSold);
+      //this.dailyStoreTotal[i] += cookiesSoldEachHour;
       console.log(this.cookiesSoldEachHour);
       }
     }
@@ -50,7 +51,7 @@ let seattle = {
 seattle.render();
 
 
-let tokyo = {
+/*let tokyo = {
   name: 'Tokyo',
   min: 3,
   max: 24,
@@ -77,3 +78,4 @@ let lima = {
   max: 16,
   avg: 4.6,
 }
+*/
