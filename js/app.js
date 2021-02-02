@@ -4,10 +4,10 @@ console.log('hello world');
 
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-var seatteList = document.getElementById('seattle');
-var toykoList = document.getElementById('tokyo');
-var dubaiList = document.getElementById('dubai');
-var parisList = document.getElementById('paris');
+let seatteList = document.getElementById('seattle');
+let toykoList = document.getElementById('tokyo');
+let dubaiList = document.getElementById('dubai');
+let parisList = document.getElementById('paris');
 let limaList = document.getElementById('lima');
 
 
