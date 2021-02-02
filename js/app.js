@@ -1,4 +1,5 @@
 'use strict';
+console.log('hello world');
 
 // global variables 
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
@@ -21,6 +22,8 @@ let seattle = {
   randomCustomersPerHour: function () {
     return Math.floor(Math.randon() * (this.maxCustPerHour - this.minCustPerHour + 1) + this.minCustPerHour);
   },
+
+
 
   calcCookiesSoldPerHour: function () {
     for (let i = 0; i < hours.length; i++) {
@@ -49,8 +52,9 @@ let tokyo = {
   minCustPerHour: 3,
   maxCustPerHour: 24,
   avgCookieSale: 1.2
-  cookiesSoldPerHourArray: [],
+  cookiesSoldPerHourArray: [], 
   dailyStoreTotal: 0,
+
 
 
   randomCustomerPerHour: function () {
@@ -70,7 +74,7 @@ let tokyo = {
     this.calcCookiesSoldPerHour();
     for (let i = 0; i < hours.length; i++) {
       let li = document.createElement('li');
-      li.textContent = `${hours[i]}: ${this.dailyStoreTotal} cookies`;
+      li.textContent = `${hours[i]}: ${this.cookiesSoldPerHourArray[i]} cookies`;
       toykoList.appendChild(li);
     }
     let li = document.createElement('li');
