@@ -61,7 +61,7 @@ function headerRender() {
   let head = document.createElement('thead');
   let tr = document.createElement('tr');
   let th = document.createElement('th');
-  th.textContent = '';
+  th.textContent = 'Stores';
   tr.appendChild(th);
 
   for (var i = 0; i < hours.length; i++) {
@@ -69,6 +69,7 @@ function headerRender() {
     th.textContent = hours[i];
     tr.appendChild(th);
   }
+
   th = document.createElement('th');
   th.textContent = 'Store Daily Totals';
   tr.appendChild(th);
@@ -76,7 +77,18 @@ function headerRender() {
   table.appendChild(head);
 }
 
+function footerRender() {
+  let foot = document.createElement('tfoot');
+  let tr = document.createElement('tr');
+  let th = document.createElement('th');
+  th.textContent = 'totals';
+  tr.appendChild(th);
+  foot.appendChild(tr);
+  table.appendChild(foot);
+}
+
 headerRender();
+footerRender();
 
 let seattle = new Store('Seattle', 23, 65, 6.3);
 let tokyo = new Store('Tokyo', 3, 24, 1.2);
