@@ -56,7 +56,6 @@ Store.prototype.locationRender = function () {
   body.appendChild(tr);
 };
 
-
 function headerRender() {
   let head = document.createElement('thead');
   let tr = document.createElement('tr');
