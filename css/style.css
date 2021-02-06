@@ -1,3 +1,25 @@
 body {
   background-color: lightblue;
 }
+
+h1 {
+  font-size: 30px;
+  text-align: center;
+  padding: 20x;
+}
+
+table {
+  border: medium solid red;
+  border-spacing: 5px;
+  margin: 25px auto;
+  border-collapse: separate;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px red;
+}
+
+th {
+  font-weight: bolder;
+}
