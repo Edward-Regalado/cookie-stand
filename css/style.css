@@ -35,7 +35,11 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.2fr 3fr 1.5fr 0.4fr;
-  grid-template-areas: "header header header header" "main main main sidebar" "box-1 box-2 box-3 sidebar" "footer footer footer footer";
+  grid-template-areas: 
+  "header header header header" 
+  "main main main sidebar" 
+  "box-1 box-2 box-3 sidebar" 
+  "footer footer footer footer";
   height: 100vh;
   padding: 20px;
 }
@@ -93,7 +97,7 @@ nav ul li a {
   border-radius: 10px;
 }
 
-/* Home /////// ////////////////////////////////////////////////////////////*/
+/* Home ///////////////////////////////////////////////////////////////////*/
 
 main {
   display: flex;

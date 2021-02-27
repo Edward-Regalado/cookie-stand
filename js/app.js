@@ -10,6 +10,7 @@ let allStoresTotal = new Array(hours.length + 1).fill(0);
 let table = document.getElementById('cookie-table');
 let body = document.createElement('tbody');
 table.appendChild(body);
+let myForm = document.querySelector('form');
 
 
 function Store(name, minCust, maxCust, avgCookieSale) {
@@ -46,6 +47,7 @@ Store.prototype.locationRender = function () {
 
   th.textContent = this.name;
   tr.appendChild(th); // make td add text and put it to the row
+
   for (let i = 0; i < this.cookiesSoldPerHourArray.length; i++) {
     let td = document.createElement('td');
     td.textContent = this.cookiesSoldPerHourArray[i];
@@ -65,7 +67,7 @@ function headerRender() {
   th.textContent = 'Stores';
   tr.appendChild(th);
 
-  for (var i = 0; i < hours.length; i++) {
+  for (let i = 0; i < hours.length; i++) {
     th = document.createElement('th');
     th.textContent = hours[i];
     tr.appendChild(th);
@@ -103,7 +105,20 @@ Store.prototype.calcTotal = function () {
   }
 };
 
+function handleSubmit (event) {
+  event.preventDefault();
 
+  let newLocation = event.target.newLocation.value;
+  let minCust = +event.target.minCust.value;
+  let maxCust = +event.target.maxCust.value;
+  let avgCookiePerCust = +event.target.avgCookie.value;
+
+  let newShop = new Store(newLocation, minCust, maxCust, avgCookiePerCust);
+  newShop.render();
+
+  document.getElementById('cookie-table').deleteRow(-1);
+  footerRender();
+}
 
 let seattle = new Store('Seattle', 23, 65, 6.3);
 let tokyo = new Store('Tokyo', 3, 24, 1.2);
@@ -113,3 +128,4 @@ let lima = new Store('Lima', 2, 16, 4.6);
 
 headerRender();
 footerRender();
+myForm.addEventListener('submit', handleSubmit);
